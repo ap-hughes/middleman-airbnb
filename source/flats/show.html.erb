@@ -1,0 +1,56 @@
+---
+title: Le Wagon - Middleman - Flats
+---
+
+<% flat = data.flats[owner] %>
+
+<div class="hero-image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('https://kitt.lewagon.com/placeholder/cities/<%= flat.city_slug %>')">
+</div>
+
+
+
+<div class="light-blue-wrapper">
+  <div class="container">
+    <div class="flat-content">
+      <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class: "img-circle profile-image" %>
+      <a href="#"><%= owner %></a>
+      <h1><%= flat.description %></h1>
+      <p><%= flat.city_name %></p>
+      <p><%= flat.name %></p>
+      <p><%= flat.about %></p>
+      <p><%= flat.accommodates %></p>
+      <h2>Rating</h2>
+      <div class="stars">
+        <% flat.rating.times do %>
+          <p><i class="fa fa-star live-star"></i></p>
+        <% end %>
+        <% (5 - flat.rating).times do %>
+          <p><i class="fa fa-star no-star"></i></p>
+        <% end %>
+      </div>
+      <h2>Amenities</h2>
+      <% if flat.wifi == true %>
+        <p><i class="fa fa-wifi"></i> WiFi available</p>
+      <% end %>
+    </div>
+    <form action="#" class="form-inline check-in-form">
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="check-in">Check-in date</label>
+            <input type="check-in" id="check-in" class="form-control" placeholder="check-in">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label for="check-out">Check-out date</label>
+            <input type="check-out" id="check-out" class="form-control" placeholder="check-out">
+          </div>
+        </div>
+      </div>
+      <input type="submit" value="Book" class="btn btn-primary">
+    </form>
+  </div>
+</div>

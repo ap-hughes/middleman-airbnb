@@ -1,0 +1,26 @@
+.flat-content {
+  // display: flex;
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: lighter;
+  }
+}
+
+.check-in-form {
+  align-content: center;
+  padding: 5px;
+}
+
+.stars {
+  display: flex;
+  align-content: center;
+  .no-star{
+    color: $blue;
+  }
+  .live-star{
+    color: $cream;
+  }
+}
